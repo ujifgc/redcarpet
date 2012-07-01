@@ -93,7 +93,7 @@ HTML
     text = "The Ant-Sugar Tales \n"         +
            "=================== \n\n"        +
            "By Candice Yellowflower   \n"
-    assert_equal "<h1>The Ant-Sugar Tales </h1>\n\n<p>By Candice Yellowflower   </p>\n", @markdown.render(text)
+    assert_equal "<h3>The Ant-Sugar Tales </h3>\n\n<p>By Candice Yellowflower   </p>\n", @markdown.render(text)
   end
 
   def test_that_intra_emphasis_works

@@ -33,13 +33,13 @@ class SmartyHTMLTest < Redcarpet::TestCase
 
   def test_that_smartyhtml_ignores_pre
     rd = render("    It's a test of \"pre\"\n")
-    expected = "It&#39;s a test of &quot;pre&quot;"
+    expected = "It's a test of \"pre\""
     assert rd.include?(expected), "\"#{rd}\" should contain \"#{expected}\""
   end
 
   def test_that_smartyhtml_ignores_code
     rd = render("`It's a test of \"code\"`\n")
-    expected = "It&#39;s a test of &quot;code&quot;"
+    expected = "It's a test of \"code\""
     assert rd.include?(expected), "\"#{rd}\" should contain \"#{expected}\""
   end
 end

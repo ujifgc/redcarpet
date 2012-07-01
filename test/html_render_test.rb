@@ -82,7 +82,7 @@ EOE
 
   def test_that_link_works_with_quotes
     markdown = %([This'link"is](http://example.net/))
-    expected = %(<p><a href="http://example.net/">This&#39;link&quot;is</a></p>\n)
+    expected = %(<p><a href="http://example.net/">This'link"is</a></p>\n)
 
     assert_equal expected, render(markdown)
     assert_equal expected, render(markdown, with: [:escape_html])

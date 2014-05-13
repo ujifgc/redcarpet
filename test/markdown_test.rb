@@ -319,7 +319,7 @@ text
     assert_equal html, render_with({:no_intra_emphasis => true}, markdown)
 
     markdown = "This is \"**bold**\""
-    html = "<p>This is &quot;<strong>bold</strong>&quot;</p>\n"
+    html = "<p>This is \"<strong>bold</strong>\"</p>\n"
     assert_equal html, render_with({:no_intra_emphasis => true}, markdown)
   end
 

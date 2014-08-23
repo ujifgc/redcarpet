@@ -1,13 +1,13 @@
 # encoding: utf-8
 Gem::Specification.new do |s|
-  s.name = 'redcarpet'
-  s.version = '3.3.2'
-  s.summary = "Markdown that smells nice"
-  s.description = 'A fast, safe and extensible Markdown to (X)HTML parser'
-  s.date = '2015-06-22'
-  s.email = 'vicent@github.com'
-  s.homepage = 'http://github.com/vmg/redcarpet'
-  s.authors = ["Natacha Porté", "Vicent Martí"]
+  s.name = 'tight-redcarpet'
+  s.version = '3.3.2t'
+  s.summary = "Markdown that smells nice (patch level 'tight')"
+  s.description = 'A fast, safe and extensible Markdown to (X)HTML parser patched to have smaller headings and no quote-escaping'
+  s.date = '2015-09-24'
+  s.email = 'ujifgc@github.com'
+  s.homepage = 'http://github.com/ujifgc/redcarpet'
+  s.authors = ["Natacha Porté", "Vicent Martí", "Igor Bochkariov"]
   s.license = 'MIT'
   s.required_ruby_version = '>= 1.9.2'
   # = MANIFEST =

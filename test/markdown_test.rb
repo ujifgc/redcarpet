@@ -27,7 +27,7 @@ class MarkdownTest < Redcarpet::TestCase
     assert_equal "<p><em>start _ foo_bar bar_baz _ end</em> <em>italic</em> <strong>bold</strong> <a><em>blah</em></a></p>\n", markdown
 
     markdown = @markdown.render("Run 'rake radiant:extensions:rbac_base:migrate'")
-    assert_equal "<p>Run &#39;rake radiant:extensions:rbac_base:migrate&#39;</p>\n", markdown
+    assert_equal "<p>Run 'rake radiant:extensions:rbac_base:migrate'</p>\n", markdown
   end
 
   def test_that_urls_are_not_doubly_escaped
@@ -54,7 +54,7 @@ class MarkdownTest < Redcarpet::TestCase
       " > Isn't it wonderful just to be alive.\n"
     )
     assert_equal "<p>A wise man once said:</p>\n\n" +
-      "<blockquote>\n<p>Isn&#39;t it wonderful just to be alive.</p>\n</blockquote>\n",
+      "<blockquote>\n<p>Isn't it wonderful just to be alive.</p>\n</blockquote>\n",
       markdown
   end
 
@@ -267,13 +267,13 @@ fenced
   def test_that_fenced_code_copies_language_verbatim_with_braces
     text = "```{rust,no_run}\nx = 'foo'\n```"
     html = render_with({:fenced_code_blocks => true}, text)
-    assert_equal "<pre><code class=\"rust,no_run\">x = &#39;foo&#39;\n</code></pre>\n", html
+    assert_equal "<pre><code class=\"rust,no_run\">x = 'foo'\n</code></pre>\n", html
   end
 
   def test_that_fenced_code_copies_language_verbatim
     text = "```rust,no_run\nx = 'foo'\n```"
     html = render_with({:fenced_code_blocks => true}, text)
-    assert_equal "<pre><code class=\"rust,no_run\">x = &#39;foo&#39;\n</code></pre>\n", html
+    assert_equal "<pre><code class=\"rust,no_run\">x = 'foo'\n</code></pre>\n", html
   end
 
   def test_that_indented_flag_works

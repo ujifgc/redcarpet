@@ -15,13 +15,13 @@ class RedcarpetCompatTest < Redcarpet::TestCase
   def test_compat_api_knows_fenced_code_extension
     text = "```ruby\nx = 'foo'\n```"
     html = RedcarpetCompat.new(text, :fenced_code).to_html
-    assert_equal "<pre><code class=\"ruby\">x = &#39;foo&#39;\n</code></pre>\n", html
+    assert_equal "<pre><code class=\"ruby\">x = 'foo'\n</code></pre>\n", html
   end
 
   def test_compat_api_ignores_gh_blockcode_extension
     text = "```ruby\nx = 'foo'\n```"
     html = RedcarpetCompat.new(text, :fenced_code, :gh_blockcode).to_html
-    assert_equal "<pre><code class=\"ruby\">x = &#39;foo&#39;\n</code></pre>\n", html
+    assert_equal "<pre><code class=\"ruby\">x = 'foo'\n</code></pre>\n", html
   end
 
   def test_compat_api_knows_no_intraemphasis_extension
@@ -33,6 +33,6 @@ class RedcarpetCompatTest < Redcarpet::TestCase
     # these extensions are no longer used
     exts = [:gh_blockcode, :no_tables, :smart, :strict]
     html = RedcarpetCompat.new('"TEST"', *exts).to_html
-    assert_equal "<p>&quot;TEST&quot;</p>\n", html
+    assert_equal "<p>\"TEST\"</p>\n", html
   end
 end

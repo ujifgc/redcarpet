@@ -20,7 +20,7 @@ EOS
 
 <p>&lt;script&gt;BAD&lt;/script&gt;</p>
 
-<p>&lt;img src=&quot;/favicon.ico&quot; /&gt;</p>
+<p>&lt;img src="/favicon.ico" /&gt;</p>
 EOE
 
     assert_equal expected, render(source, with: [:escape_html])
